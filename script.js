@@ -165,6 +165,30 @@ function startCountdown() {
 // Update countdown
 function updateCountdown() {
     const now = new Date();
+    const firstDateParts = ramadanData[0].date.split('-').map(Number);
+    const lastDateParts = ramadanData[ramadanData.length - 1].date.split('-').map(Number);
+    const firstDate = new Date(firstDateParts[2], firstDateParts[1] - 1, firstDateParts[0]);
+    const lastDate = new Date(lastDateParts[2], lastDateParts[1] - 1, lastDateParts[0]);
+
+    if (now < firstDate) {
+        const diff = firstDate - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown-timer').textContent =
+            `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        document.getElementById('next-event-label').textContent = 'Tijd tot start Ramadan';
+        return;
+    }
+
+    if (now > lastDate) {
+        document.getElementById('countdown-timer').textContent = 'Volgend jaar volgen de tijden weer';
+        document.getElementById('next-event-label').textContent = 'Ramadan voorbij';
+        return;
+    }
+
     const today = ramadanData.find(day => {
         const [d, m, y] = day.date.split('-').map(Number);
         const dayDate = new Date(y, m - 1, d);
