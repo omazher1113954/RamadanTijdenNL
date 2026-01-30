@@ -73,14 +73,12 @@ function renderTable() {
         }
         
         row.innerHTML = `
-            <td><strong>${adjusted.day}</strong></td>
-            <td>${adjusted.dayName}</td>
-            <td>${adjusted.date}</td>
-            <td>${adjusted.fajr}</td>
-            <td>${adjusted.zuhr}</td>
-            <td>${adjusted.asr}</td>
-            <td>${adjusted.maghrib}</td>
-            <td>${adjusted.isha}</td>
+            <td data-label="Ramadan"><strong>${adjusted.day}</strong></td>
+            <td data-label="Dag">${adjusted.dayName}</td>
+            <td data-label="Datum">${adjusted.date}</td>
+            <td data-label="Einde sahr, Fadjr">${adjusted.fajr}</td>
+            <td data-label="Iftar, Maghrib">${adjusted.maghrib}</td>
+            <td data-label="Isha- en Tarawihgebed">${adjusted.isha}</td>
         `;
         
         tbody.appendChild(row);
@@ -131,14 +129,6 @@ function updateTodayTimes() {
         <div class="time-card">
             <span class="prayer-name">Fadjr</span>
             <span class="prayer-time">${adjusted.fajr}</span>
-        </div>
-        <div class="time-card">
-            <span class="prayer-name">Zuhr</span>
-            <span class="prayer-time">${adjusted.zuhr}</span>
-        </div>
-        <div class="time-card">
-            <span class="prayer-name">Asr</span>
-            <span class="prayer-time">${adjusted.asr}</span>
         </div>
         <div class="time-card highlight">
             <span class="prayer-name">Maghrib (Iftar)</span>
@@ -204,8 +194,6 @@ function updateCountdown() {
     const adjusted = getAdjustedTimes(today);
     const prayers = [
         { name: 'Fadjr', time: adjusted.fajr },
-        { name: 'Zuhr', time: adjusted.zuhr },
-        { name: 'Asr', time: adjusted.asr },
         { name: 'Maghrib (Iftar)', time: adjusted.maghrib },
         { name: 'Isha', time: adjusted.isha }
     ];

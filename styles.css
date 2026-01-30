@@ -351,6 +351,52 @@ tbody tr.current-day-row {
     
     .table-wrapper {
         font-size: 0.9em;
+        overflow-x: visible;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 16px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        background: white;
+    }
+
+    tbody tr:hover {
+        background-color: white;
+    }
+
+    td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--text-dark);
+        flex: 0 0 40%;
+    }
+
+    td:last-child {
+        border-bottom: none;
     }
 }
 
