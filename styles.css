@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2d5f3f;
+    --secondary-color: #f4e4c1;
+    --accent-color: #d4af37;
+    --text-dark: #2c3e50;
+    --text-light: #ecf0f1;
+    --bg-light: #f8f9fa;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e4d2b 100%);
+    color: var(--text-light);
+    padding: 30px;
+    text-align: center;
+}
+
+.logo-section h1 {
+    font-size: 2em;
+    font-weight: normal;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', serif;
+}
+
+.logo-section h2 {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.region-selector {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.region-selector label {
+    font-size: 1.1em;
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.region-selector select {
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: var(--text-dark);
+    cursor: pointer;
+    min-width: 200px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.region-selector select:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content */
+main {
+    padding: 40px 30px;
+}
+
+/* Timer Section */
+.timer-section {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #e8d5a8 100%);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.current-day {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.current-day h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.current-day p {
+    font-size: 1.2em;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.countdown {
+    text-align: center;
+}
+
+.countdown h2 {
+    font-size: 1.3em;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.time-display {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#countdown-timer {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+}
+
+/* Today Times */
+.today-times {
+    margin-bottom: 40px;
+}
+
+.today-times h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.times-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.time-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.time-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
+}
+
+.time-card.highlight {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #c9a237 100%);
+    color: white;
+}
+
+.time-card.highlight .prayer-name,
+.time-card.highlight .prayer-time {
+    color: white;
+}
+
+.prayer-name {
+    display: block;
+    font-size: 0.95em;
+    color: #6c757d;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.prayer-time {
+    display: block;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+}
+
+/* Table Section */
+.table-section {
+    margin-bottom: 40px;
+}
+
+.table-section h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e4d2b 100%);
+    color: white;
+}
+
+th {
+    padding: 18px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.95em;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+tbody tr.current-day-row {
+    background-color: rgba(212, 175, 55, 0.2);
+    font-weight: 600;
+}
+
+/* Info Section */
+.info-section {
+    text-align: center;
+    padding: 30px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.note {
+    color: #6c757d;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.eid-notice {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #c9a237 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
+    .logo-section h1 {
+        font-size: 1.5em;
+    }
+    
+    .logo-section h2 {
+        font-size: 1em;
+    }
+    
+    .region-selector {
+        padding: 15px;
+    }
+    
+    .region-selector label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .region-selector select {
+        width: 100%;
+    }
+    
+    main {
+        padding: 20px 15px;
+    }
+    
+    .timer-section {
+        padding: 25px 20px;
+    }
+    
+    #countdown-timer {
+        font-size: 2.5em;
+    }
+    
+    .times-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+    
+    .time-card {
+        padding: 18px;
+    }
+    
+    .prayer-time {
+        font-size: 1.5em;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+        font-size: 0.85em;
+    }
+    
+    .table-wrapper {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-section h1 {
+        font-size: 1.2em;
+    }
+    
+    .logo-section h2 {
+        font-size: 0.9em;
+    }
+    
+    #countdown-timer {
+        font-size: 2em;
+    }
+    
+    .times-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    th, td {
+        padding: 8px 5px;
+        font-size: 0.8em;
+    }
+}

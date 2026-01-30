@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Tijden 1447 H - 2026</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-section">
+                <h1>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h1>
+                <h2>DE VASTENMAAND RAMADAN 1447 N.H. - 2026 A.D.</h2>
+            </div>
+            
+            <div class="region-selector">
+                <label for="region">Selecteer uw locatie:</label>
+                <select id="region">
+                    <option value="amsterdam">Amsterdam</option>
+                    <option value="rotterdam">Rotterdam</option>
+                    <option value="den-haag">Den Haag</option>
+                    <option value="utrecht">Utrecht</option>
+                    <option value="eindhoven">Eindhoven</option>
+                    <option value="almere">Almere</option>
+                    <option value="arnhem">Arnhem</option>
+                    <option value="den-helder">Den Helder</option>
+                    <option value="leeuwarden">Leeuwarden</option>
+                    <option value="maastricht">Maastricht</option>
+                    <option value="nunspeet">Nunspeet</option>
+                    <option value="s-hertogenbosch">'s-Hertogenbosch</option>
+                    <option value="vlissingen">Vlissingen</option>
+                    <option value="zoetermeer">Zoetermeer</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <div class="timer-section">
+                <div class="current-day">
+                    <h3 id="current-date"></h3>
+                    <p id="ramadan-day"></p>
+                </div>
+                
+                <div class="countdown">
+                    <h2 id="next-event-label">Tijd tot volgende gebed</h2>
+                    <div class="time-display">
+                        <span id="countdown-timer">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="today-times">
+                <h3>Tijden voor vandaag</h3>
+                <div class="times-grid" id="today-times">
+                    <!-- Dynamisch gevuld -->
+                </div>
+            </div>
+
+            <div class="table-section">
+                <h3>Volledige Ramadan Kalender</h3>
+                <div class="table-wrapper">
+                    <table id="ramadan-table">
+                        <thead>
+                            <tr>
+                                <th>Ramadan</th>
+                                <th>Dag</th>
+                                <th>Datum</th>
+                                <th>Einde sahr, begin vasten, Fadjrgebed</th>
+                                <th>Zuhrgebed</th>
+                                <th>Asrgebed</th>
+                                <th>Iftar, einde vasten, Maghribgebed</th>
+                                <th>Isha- en Tarawihgebed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Dynamisch gevuld -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <p class="note">
+                    De bovengenoemde tijden gelden voor 52°00' NB en 5°00' OL. 
+                    Voor uw locatie worden automatisch correcties toegepast.
+                </p>
+                <p class="eid-notice">
+                    <strong>VRIJDAG 20 MAART 2026 ID-UL-FITR</strong> (IED-GEBED: 10:30 UUR)
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
